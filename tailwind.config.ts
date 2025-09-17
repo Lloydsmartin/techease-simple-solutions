@@ -24,16 +24,29 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
           hover: "hsl(var(--primary-hover))",
           light: "hsl(var(--primary-light))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
           light: "hsl(var(--secondary-light))",
+          glow: "hsl(var(--secondary-glow))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           light: "hsl(var(--accent-light))",
+          glow: "hsl(var(--accent-glow))",
+        },
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          foreground: "hsl(var(--orange-foreground))",
+          light: "hsl(var(--orange-light))",
+        },
+        cyan: {
+          DEFAULT: "hsl(var(--cyan))",
+          foreground: "hsl(var(--cyan-foreground))",
+          light: "hsl(var(--cyan-light))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -77,6 +90,8 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-secondary": "var(--gradient-secondary)",
         "gradient-hero": "var(--gradient-hero)",
+        "gradient-accent": "var(--gradient-accent)",
+        "gradient-rainbow": "var(--gradient-rainbow)",
         "gradient-subtle": "var(--gradient-subtle)",
       },
       boxShadow: {
@@ -85,6 +100,9 @@ export default {
         lg: "var(--shadow-lg)",
         xl: "var(--shadow-xl)",
         glow: "var(--shadow-glow)",
+        "glow-secondary": "var(--shadow-glow-secondary)",
+        "glow-accent": "var(--shadow-glow-accent)",
+        rainbow: "var(--shadow-rainbow)",
       },
       transitionDuration: {
         fast: "150ms",

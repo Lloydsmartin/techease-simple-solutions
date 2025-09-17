@@ -9,12 +9,12 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/why-choose-us", label: "Why Choose Us" },
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/contact", label: "Contact" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#why-choose-us", label: "Why Choose Us" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -22,32 +22,30 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">TE</span>
+          <a href="#home" className="flex items-center space-x-2 group">
+            <div className="w-8 h-8 bg-gradient-rainbow rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white font-bold text-sm">TE</span>
             </div>
             <div>
-              <span className="font-bold text-lg text-foreground">TechEase</span>
+              <span className="font-bold text-lg bg-gradient-rainbow bg-clip-text text-transparent">TechEase</span>
               <span className="text-primary font-medium"> Solutions</span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                to={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === item.href
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item, index) => {
+              const colors = ["text-primary", "text-secondary", "text-accent", "text-orange", "text-cyan", "text-primary"];
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-medium transition-all duration-300 hover:${colors[index]} hover:scale-105 hover:-translate-y-1 text-muted-foreground`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* CTA Button */}
@@ -58,8 +56,8 @@ const Navigation = () => {
                 <span>Call Now</span>
               </a>
             </Button>
-            <Button asChild>
-              <Link to="/contact">Get Started</Link>
+            <Button asChild variant="rainbow" size="sm">
+              <a href="#contact">Get Started</a>
             </Button>
           </div>
 
@@ -78,21 +76,19 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className={cn(
-                    "px-3 py-2 text-sm font-medium transition-colors hover:text-primary",
-                    location.pathname === item.href
-                      ? "text-primary bg-primary-light"
-                      : "text-muted-foreground"
-                  )}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item, index) => {
+                const colors = ["text-primary", "text-secondary", "text-accent", "text-orange", "text-cyan", "text-primary"];
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors hover:${colors[index]} text-muted-foreground`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
               <div className="flex flex-col space-y-2 px-3 pt-3 border-t border-border">
                 <Button asChild variant="outline" size="sm">
                   <a href="tel:+254700244989" className="flex items-center justify-center space-x-2">
@@ -100,8 +96,8 @@ const Navigation = () => {
                     <span>Call Now</span>
                   </a>
                 </Button>
-                <Button asChild onClick={() => setIsMenuOpen(false)}>
-                  <Link to="/contact">Get Started</Link>
+                <Button asChild variant="rainbow" size="sm" onClick={() => setIsMenuOpen(false)}>
+                  <a href="#contact">Get Started</a>
                 </Button>
               </div>
             </div>

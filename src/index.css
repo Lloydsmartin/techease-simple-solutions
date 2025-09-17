@@ -18,21 +18,33 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 11% 15%;
 
-    /* Primary Blue - Trust & Technology */
-    --primary: 217 91% 60%;
+    /* Primary Electric Blue - Trust & Technology */
+    --primary: 217 100% 65%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 55%;
-    --primary-light: 217 91% 95%;
+    --primary-hover: 217 100% 70%;
+    --primary-light: 217 100% 96%;
+    --primary-glow: 217 100% 75%;
 
-    /* Secondary Green - Innovation & Growth */
-    --secondary: 142 76% 36%;
+    /* Secondary Emerald Green - Innovation & Growth */
+    --secondary: 142 86% 42%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 142 76% 95%;
+    --secondary-light: 142 86% 96%;
+    --secondary-glow: 142 86% 50%;
 
-    /* Accent Purple - Creativity & Solutions */
-    --accent: 262 83% 58%;
+    /* Accent Vibrant Purple - Creativity & Solutions */
+    --accent: 262 93% 65%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 262 83% 95%;
+    --accent-light: 262 93% 96%;
+    --accent-glow: 262 93% 70%;
+
+    /* New Colors for Pop */
+    --orange: 24 100% 60%;
+    --orange-foreground: 0 0% 100%;
+    --orange-light: 24 100% 96%;
+
+    --cyan: 188 100% 50%;
+    --cyan-foreground: 0 0% 100%;
+    --cyan-light: 188 100% 96%;
 
     /* Neutral Grays */
     --muted: 210 40% 96%;
@@ -52,18 +64,23 @@ All colors MUST be HSL.
     --radius-lg: 1rem;
     --radius-xl: 1.5rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 100% 65%), hsl(217 100% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 86% 42%), hsl(142 86% 52%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 100% 65%), hsl(262 93% 65%), hsl(24 100% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(262 93% 65%), hsl(262 93% 75%));
+    --gradient-rainbow: linear-gradient(90deg, hsl(217 100% 65%), hsl(142 86% 42%), hsl(262 93% 65%), hsl(24 100% 60%));
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
 
-    /* Shadows */
+    /* Enhanced Shadows with Color */
     --shadow-sm: 0 1px 2px 0 hsl(210 20% 0% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(210 20% 0% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(210 20% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(210 20% 0% / 0.15);
     --shadow-xl: 0 20px 25px -5px hsl(210 20% 0% / 0.25);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(217 100% 65% / 0.4);
+    --shadow-glow-secondary: 0 0 30px hsl(142 86% 42% / 0.3);
+    --shadow-glow-accent: 0 0 30px hsl(262 93% 65% / 0.3);
+    --shadow-rainbow: 0 0 50px hsl(217 100% 65% / 0.2), 0 0 100px hsl(262 93% 65% / 0.1);
 
     /* Transitions */
     --transition-fast: all 0.15s ease-out;
@@ -170,12 +187,41 @@ All colors MUST be HSL.
   }
 
   .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-rainbow);
   }
 
   .hover-glow:hover {
     box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
+  }
+
+  .hover-rainbow:hover {
+    background: var(--gradient-rainbow);
+    box-shadow: var(--shadow-rainbow);
+    transform: translateY(-4px);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .button-primary:hover {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .button-secondary:hover {
+    background: var(--gradient-secondary);
+    box-shadow: var(--shadow-glow-secondary);
+    transform: translateY(-2px);
+  }
+
+  .button-accent:hover {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-glow-accent);
+    transform: translateY(-2px);
   }
 
   /* Glass morphism effect */
