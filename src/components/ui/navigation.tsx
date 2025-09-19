@@ -51,7 +51,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <Button asChild variant="outline" size="sm">
-              <a href="tel:+254700244989" className="flex items-center space-x-2">
+              <a href="tel:+254100944938" className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
                 <span>Call Now</span>
               </a>
@@ -91,7 +91,7 @@ const Navigation = () => {
               })}
               <div className="flex flex-col space-y-2 px-3 pt-3 border-t border-border">
                 <Button asChild variant="outline" size="sm">
-                  <a href="tel:+254700244989" className="flex items-center justify-center space-x-2">
+                  <a href="tel:+254100944938" className="flex items-center justify-center space-x-2">
                     <Phone className="w-4 h-4" />
                     <span>Call Now</span>
                   </a>

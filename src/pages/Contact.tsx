@@ -55,18 +55,18 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+254 700 244 989",
+      details: "+254 100 944 938",
       description: "Available 24/7 for emergencies",
-      action: "tel:+254700244989",
+      action: "tel:+254100944938",
       color: "text-primary",
       bgColor: "bg-primary-light"
     },
     {
       icon: MessageSquare,
       title: "WhatsApp",
-      details: "+254 700 244 989",
+      details: "+254 100 944 938",
       description: "Quick support & file sharing",
-      action: "https://wa.me/254700244989",
+      action: "https://wa.me/254100944938",
       color: "text-secondary",
       bgColor: "bg-secondary-light"
     },
@@ -341,7 +341,7 @@ const Contact = () => {
                         Call our emergency line for immediate assistance.
                       </p>
                       <Button asChild variant="secondary">
-                        <a href="tel:+254700244989">Call Emergency Line</a>
+                        <a href="tel:+254100944938">Call Emergency Line</a>
                       </Button>
                     </CardContent>
                   </Card>
